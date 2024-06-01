@@ -30,3 +30,15 @@ chatSearchInput.addEventListener('focus', () => {
 chatSearchInput.addEventListener('blur', () => {
     chatSearchLabel.classList.remove('focused');
 })
+
+var users = document.querySelectorAll('.user-lists li');
+var chatHeader= document.querySelector('.user-chat-header')
+users.forEach(user => {
+    user.addEventListener('click', () => {
+        var username = user.querySelector('h4').innerText;
+        var profilePic = user.querySelector('.user-list-dp').src;
+        console.log(profilePic);
+        chatHeader.querySelector('.user-name').innerText = username;
+        chatHeader.querySelector('.user-header-dp').src = profilePic;
+    })
+})

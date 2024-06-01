@@ -320,7 +320,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
     color: #fff;
 }
 
-.chat-page p{
+.default-chat-page p{
     color: #adaaaa;
     text-align: center;
 }
@@ -387,7 +387,87 @@ aside ul li:hover, aside ul .aside-menu:hover{
     background: url('https://th.bing.com/th/id/OIP.7FNx_gXB2LeQP6RRMVijpwAAAA?rs=1&pid=ImgDetMain');
     width: calc(100% - 1px);
     height: calc(100vh - 109px);
+    overflow-y: auto;
 }
+
+.user-chat ul{
+    margin-top: 20px;
+}
+
+.other-msg, .my-msg{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.msg-div{
+    width: fit-content;
+    max-width: 80%;
+    min-width: 20%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.other-msg .msg-div{
+    background-color: #363636;
+    margin-left: 20px;
+}
+
+.other-msg .msg-div.start::before{
+    content: '';
+    background-color: #363636;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    transform: rotate(45deg);
+}
+
+.my-msg .msg-div.start::after{
+    content: '';
+    background-color: #005c4b;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    transform: rotate(45deg);
+}
+
+.my-msg .msg-div{
+    margin-left: auto;
+    margin-right: 20px;
+    background-color: #005c4b;
+}
+
+.other-msg p, .my-msg p{
+    color: #fff;
+    text-align: left;
+    padding: 6px;
+    width: auto;
+}
+
+.other-msg span, .my-msg span{
+    color: #dbd6d6;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .user-send{
     background-color: var(--background);
