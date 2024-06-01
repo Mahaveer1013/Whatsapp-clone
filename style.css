@@ -503,7 +503,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 
 .go-back-aside{
     display: none;
-    margin: auto;
+    margin-left: 5px;
 }
 
 @media all and (max-width:768px) {
