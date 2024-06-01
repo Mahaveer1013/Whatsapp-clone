@@ -7,6 +7,7 @@
     <link rel="icon" href="https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <!-- Developed By Mahaveer.A on 31-05-2024 -->
 </head>
 <body>
 
@@ -56,7 +57,7 @@
 
     <div class="container">
         <!-- chat list section -->
-        <div class="chat-list">
+        <div class="chat-list active">
             <div class="chat-header">
                 <div class="chat-title">
                     <p>Chats</p>
@@ -241,19 +242,18 @@
         <!-- end of chat list section -->
 
         <!-- chat section -->
-
         <div class="chat-page">
-            <div class="default-chat-page" style="display: none;">
+            <div class="default-chat-page">
                 <p class="wp-icon"><i class="fa-brands fa-whatsapp"></i></p>
                 <h3>WhatsApp for Windows</h3>
                 <p>Send and receive messages without your keeping phone online.</p>
                 <p>Use WhatsApp on up to 4 linked deveices and 1 phone at the same time.</p>
                 <p class="end-to-encrypted"><i class="fa-solid fa-lock"></i> End-to-end encrypted</p>
             </div>
-            <div class="user-chat-page">
+            <div class="user-chat-page hide">
                 <div class="user-chat-header">
                     <div class="l-header">
-                        <span class="go-back">
+                        <span class="go-back" onclick="goBack()">
                             <i class="fa-solid fa-arrow-left"></i>
                         </span>
                         <div class="user-dp">
@@ -399,7 +399,6 @@
                     <span class="send-btn" style="display: none;">
                         <i class="fa-regular fa-paper-plane"></i>
                     </span>
-                    <!-- Developed By Mahaveer.A -->
                 </div>
             </div>
         </div>

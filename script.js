@@ -11,8 +11,6 @@ menuBar.addEventListener('click', () => {
     })
 })
 
-
-
 var aside_lists = document.querySelectorAll('aside ul li');
 aside_lists.forEach(li => {
     li.addEventListener('click', () => {
@@ -24,9 +22,6 @@ aside_lists.forEach(li => {
     })
 })
 
-
-
-
 var chatSearchLabel = document.querySelector('.chat-search-label');
 var chatSearchInput = document.getElementById('for-chat-search');
 chatSearchInput.addEventListener('focus', () => {
@@ -36,44 +31,44 @@ chatSearchInput.addEventListener('blur', () => {
     chatSearchLabel.classList.remove('focused');
 })
 
-
-
-
 var users = document.querySelectorAll('.user-lists li');
 var chatHeader = document.querySelector('.user-chat-header')
 var chatPage = document.querySelector('.chat-page')
 var userChatPage = document.querySelector('.user-chat-page')
 var deafultChatPage = document.querySelector('.default-chat-page')
 var chatList = document.querySelector('.chat-list');
+var userChat = document.querySelector('.user-chat');
+
 users.forEach(user => {
     user.addEventListener('click', () => {
-        console.log(user);
         var username = user.querySelector('h4').innerText;
         var profilePic = user.querySelector('.user-list-dp').src;
         chatHeader.querySelector('.user-name').innerText = username;
         chatHeader.querySelector('.user-header-dp').src = profilePic;
-        console.log('1 is ' + chatPage.style.display);
-        console.log('2 is ' + userChatPage.style.display);
-        if (chatPage.style.display === 'none') {
+        if (window.innerWidth < 768) {
             console.log('yes its none');
-            chatPage.style.display = '';
-            chatList.style.display = 'none';
-            deafultChatPage.style.display='none'
-        }
-        else if (userChatPage.style.display == 'none') {
-            deafultChatPage.style.display = 'none';
-            userChatPage.style.display = '';
+            chatPage.classList.add('active');
+            deafultChatPage.classList.add('hide');
+            userChatPage.classList.remove('hide');
+            chatList.classList.remove('active');
+            userChat.scrollTop = userChat.scrollHeight;
+        } else {
+            deafultChatPage.classList.add('hide');
+            userChatPage.classList.remove('hide');
         }
     })
 })
 
-var backChat = document.querySelector('.go-back');
-backChat.addEventListener('click', () => {
-    if (chatList.style.display === 'none') {
-        chatList.style.display = '';
-        chatPage.style.display = 'none';
+if (window.innerWidth < 768) {
+    chatPage.classList.add('hide');
+}
+
+function goBack() {
+    if (window.innerWidth < 768) {
+        chatPage.classList.remove('active');
+        chatList.classList.add('active');
     } else {
-        userChatPage.style.display = 'none';
-        deafultChatPage.style.display = '';
+        deafultChatPage.classList.remove('hide');
+        userChatPage.classList.add('hide');
     }
-})
+}
