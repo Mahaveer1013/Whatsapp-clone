@@ -501,15 +501,16 @@ aside ul li:hover, aside ul .aside-menu:hover{
     background-color: var(--chat-search-input);
 }
 
-.user-send span:first-child{
-    margin-left: 10px;
-}
-
-.user-send span:last-child{
-    margin-right: 10px;
+.go-back-aside{
+    display: none;
+    margin: auto;
 }
 
 @media all and (max-width:768px) {
+    .go-back-aside{
+        display: flex;
+    }
+
     .chat-page{
         display: none;
         width: 100%;
@@ -543,19 +544,54 @@ aside ul li:hover, aside ul .aside-menu:hover{
         min-width: 20%;
     }
 
+    .msg-div p{
+        font-size: 15px;
+    }
+
     .user-chat-header{
-        padding-left: 8px;
+        padding-left: 2px;
+    }
+
+    .l-header span{
+        font-size: 13px;
+    }
+
+    .l-header .go-back{
+        display: none;
     }
     
     .l-header .user-dp{
         width: 40px;
     }
 
+    .user-dp img{
+        width: 100%;
+    }
+
     .l-header .user-name{
-        font-size: 12px;
+        font-size: 13px;
+        text-wrap: nowrap;
+        border: 1px solid #1ea35e;
+        width: 100px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .container{
+        width: calc(100% - 38px);
+    }
+
+    .aside{
+        width: 30px;
     }
 
     .r-header span, .go-back{
         padding: 8px;
     }
+
+    .user-send{
+        gap: 0;
+    }
+
+    .user-send span:fi
 }
