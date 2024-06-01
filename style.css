@@ -296,7 +296,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 
 .user-dets span{
     position: absolute;
-    right: 20px;
+    right: 0;
     font-size: 12px;
     top: 4px;
 }
@@ -365,7 +365,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
     justify-content: center;
 }
 
-.r-header span{
+.r-header span, .go-back{
     padding: 13px;
     border-radius: 6px;
 }
@@ -374,7 +374,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
     background-color: var(--chat-search-input);
 } 
 
-.r-header span:hover{
+.r-header span:hover, .go-back:hover{
     background-color: var(--chat-user-hover);
 }
 
@@ -404,7 +404,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 .msg-div{
     width: fit-content;
     max-width: 80%;
-    min-width: 20%;
+    min-width: 10%;
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
@@ -457,18 +457,6 @@ aside ul li:hover, aside ul .aside-menu:hover{
     bottom: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .user-send{
     background-color: var(--background);
     height: 45px;
@@ -507,4 +495,15 @@ aside ul li:hover, aside ul .aside-menu:hover{
 
 .user-send span:last-child{
     margin-right: 10px;
+}
+
+@media all and (max-width:768px) {
+    .container .chat-page{
+        display: none;
+        width: 100%;
+    }
+
+    .container .chat-list{
+        width: calc(100% - 1px);
+    }
 }
