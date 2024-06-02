@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <!-- Developed By Mahaveer.A on 31-05-2024 -->
 </head>
-<body class="light">
+<body>
 
-    <!-- aside section -->
+    <!-- Aside section -->
 
     <aside class="close">
         <ul>
@@ -25,42 +25,48 @@
                     <i class="fa-solid fa-arrow-left"></i>
                 </span>
             </div>
-            <li class="active">
+            <li class="active" index="1">
                 <i class="fab fa-facebook-messenger"></i>
                 <span>Chats</span>
             </li>
-            <li onclick="changeTheme()">
+            <li index="2">
                 <i class="fas fa-phone"></i>
                 <span>Calls</span>
             </li>
-            <li>
+            <li index="3">
                 <i class="fa-solid fa-video"></i>
                 <span>Status</span>
             </li>
+            <li onclick="changeTheme()">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>Change theme</span>
+            </li>
             <div class="spacer"></div>
-            <li>
+            <li index="4">
                 <i class="fas fa-star"></i>
                 <span>Starred messages</span>
             </li>
-            <li>
+            <li index="5">
                 <i class="fa-solid fa-envelope"></i>
                 <span>Archived chats</span>
             </li>
             <div class="line"></div>
-            <li>
+            <li index="6">
                 <i class="fa-solid fa-gear"></i>
                 <span>Settings</span>
             </li>
-            <li>
+            <li index="7">
                 <img src="images/fake_dp.jpg" alt="Profile Pic"/>
                 <span>Profile</span>
             </li>
         </ul>
     </aside>
 
-    <!-- end of aside -->
+    <!-- End of Aside section -->
 
-    <div class="container">
+    <!-- Chat section -->
+
+    <section class="container chat-section" index="1" style="display: none;">
         <!-- chat list section -->
         <div class="chat-list active">
             <div class="chat-header">
@@ -77,7 +83,7 @@
             <div class="chat-search">
                 <label for="for-chat-search" class="chat-search-label">
                     <i class="fas fa-search"></i>
-                    <input type="search" id="for-chat-search" placeholder="Search or start a new chat" onkeyup="searchUsers()">
+                    <input type="search" id="for-chat-search" autocomplete="false" placeholder="Search or start a new chat" onkeyup="searchUsers()">
                 </label>
             </div>
             <ul class="user-lists">
@@ -409,7 +415,75 @@
         </div>
 
         <!-- end of chat section -->
-    </div>
+    </section>
+
+    <!-- End of Chat Section -->
+
+    <!-- Call section -->
+
+    <section class="container call-section" index="2">
+        <div class="call-list-div">
+            <div class="call-list-header">
+                <h2>Calls</h2>
+                <span>
+                    <i class="fas fa-phone"></i>
+                </span>
+            </div>
+            <div class="call-list-search">
+                <label for="call-list-search">
+                    <i class="fas fa-search"></i>
+                    <input type="search" id="call-list-search" placeholder="Search or start a new call">
+                </label>
+            </div>
+            <div class="call-list">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- End of call section -->
+
+    <!-- Status section -->
+
+    <section class="container status-section" index="3" style="display: none;justify-content: center;align-items: center; color: white;">
+        Status Section
+    </section>
+
+    <!-- End of status section -->
+
+    <!-- Starred message section -->
+
+    <section class="container starred-msg-section" index="4" style="display: none;justify-content: center;align-items: center; color: white;">
+        Starred message Section
+    </section>
+
+    <!-- End of starred message section -->
+
+    <!-- Archived chats section -->
+
+    <section class="container archived-chats-section" index="5" style="display: none;justify-content: center;align-items: center; color: white;">
+        Archived chats Section
+    </section>
+
+    <!-- End of archived chats section -->
+
+    <!-- Settings section -->
+
+    <section class="container settings-section" index="6" style="display: none;justify-content: center;align-items: center; color: white;">
+        Settings Section
+    </section>
+
+    <!-- End of settings section -->
+
+    <!-- Profile section -->
+
+    <section class="container profile-section" index="7" style="display: none;justify-content: center;align-items: center; color: white;">
+        Profile Section
+    </section>
+
+    <!-- End of profile section -->
+
+
 
 
 <script src="script.js"></script>

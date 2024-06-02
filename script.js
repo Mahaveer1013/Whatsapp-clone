@@ -11,6 +11,7 @@ menuBar.addEventListener('click', () => {
     })
 })
 
+var sections = document.querySelectorAll('section');
 var aside_lists = document.querySelectorAll('aside ul li');
 aside_lists.forEach(li => {
     li.addEventListener('click', () => {
@@ -19,11 +20,30 @@ aside_lists.forEach(li => {
         })
         li.classList.add('active');
         aside.classList.add('close');
+        sections.forEach(section => {
+            var section_index = section.getAttribute('index');
+            var li_index = li.getAttribute('index');
+            console.log(section_index,li_index);
+            section.style.display = 'none';
+            if (section_index === li_index) {
+                section.style.display = 'flex';
+            }
+        })
+        
     })
 })
 
 var chatSearchLabel = document.querySelector('.chat-search-label');
 var chatSearchInput = document.getElementById('for-chat-search');
+chatSearchInput.addEventListener('focus', () => {
+    chatSearchLabel.classList.add('focused');
+})
+chatSearchInput.addEventListener('blur', () => {
+    chatSearchLabel.classList.remove('focused');
+})
+
+var chatSearchLabel = document.querySelector('.call-list-search label');
+var chatSearchInput = document.getElementById('call-list-search');
 chatSearchInput.addEventListener('focus', () => {
     chatSearchLabel.classList.add('focused');
 })
