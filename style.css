@@ -12,6 +12,22 @@
     --aside-color-open: #2d2c2c;
     --chat-search-input: #3d3d3d;
     --chat-user-hover: #515151;
+    --main-letter: #fff;
+    --chat-letter: #fff;
+    --light-letter: #ddd;
+    --default-chat-page: #adaaaa;
+    --other-msg-bg: #363636;
+    --my-msg-bg: #005c4b;
+}
+
+body.light{
+    --background: #fefefe;
+    --aside-color: #f3f3f3;
+    --chat-search-input: transparent;
+    --light-letter: #272727;
+    --aside-color-open: #f3f3f3;
+    --hover: #ededed;
+    --main-letter: #181818;
 }
 
 body{
@@ -35,7 +51,7 @@ aside{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    color: #ddd;
+    color: var(--light-letter);
     padding: 4px;
     position: fixed;
     z-index: 3;
@@ -75,6 +91,7 @@ aside ul li, .aside-menu{
 
 aside ul li span{
     text-wrap: nowrap;
+    color: var(--light-letter);
 }
 
 .aside-menu{
@@ -85,7 +102,7 @@ aside ul li span{
 
 .menu-bar{
     width: 16px;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--light-letter);
     margin-bottom: 4px;
 }
 
@@ -154,7 +171,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 
 .container .chat-list{
     width: clamp(250px , 300px, 330px);
-    color: #fff;
+    color:var(--main-letter);
     border-right: 1px solid black;
     height: 100vh;
 }
@@ -209,7 +226,8 @@ aside ul li:hover, aside ul .aside-menu:hover{
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid var(--light-letter);
     background-color: var(--chat-search-input);
 }
 
@@ -224,7 +242,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
     outline: none;
     width: 80%;
     border: none;
-    color: #fff;
+    color:var(--main-letter);
     background-color: transparent;
 
 }
@@ -302,7 +320,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .last-msg-time, .last-msg{
-    color: #ddd;
+    color: var(--light-letter);
 }
 
 /* Chat Page */
@@ -317,11 +335,11 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .chat-page h3{
-    color: #fff;
+    color:var(--main-letter);
 }
 
 .default-chat-page p{
-    color: #adaaaa;
+    color: var(--default-chat-page);
     text-align: center;
 }
 
@@ -360,7 +378,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
     justify-content: space-between;
     align-items: center;
     padding: auto;
-    color: #fff;
+    color:var(--main-letter);
     border-bottom: 1px solid black;
     padding-left: 16px;
 }
@@ -392,10 +410,14 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .user-chat{
-    background: url('https://th.bing.com/th/id/OIP.7FNx_gXB2LeQP6RRMVijpwAAAA?rs=1&pid=ImgDetMain');
+    background: url('images/dark-chat-bg.jpeg');
     width: calc(100% - 1px);
     height: calc(100vh - 109px);
     overflow-y: auto;
+}
+
+body.light .user-chat{
+    background: url('images/light-chat-bg.jpg');
 }
 
 .user-chat.hide{
@@ -423,13 +445,13 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .other-msg .msg-div{
-    background-color: #363636;
+    background-color: var(--other-msg-bg);
     margin-left: 20px;
 }
 
 .other-msg .msg-div.start::before{
     content: '';
-    background-color: #363636;
+    background-color: var(--other-msg-bg);
     width: 10px;
     height: 10px;
     position: absolute;
@@ -440,7 +462,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 
 .my-msg .msg-div.start::after{
     content: '';
-    background-color: #005c4b;
+    background-color: var(--my-msg-bg);
     width: 10px;
     height: 10px;
     position: absolute;
@@ -452,11 +474,11 @@ aside ul li:hover, aside ul .aside-menu:hover{
 .my-msg .msg-div{
     margin-left: auto;
     margin-right: 20px;
-    background-color: #005c4b;
+    background-color: var(--my-msg-bg);
 }
 
 .other-msg p, .my-msg p{
-    color: #fff;
+    color:var(--chat-letter);
     text-align: left;
     padding: 6px;
     width: auto;
@@ -483,7 +505,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 .user-send span{
     padding: 8px;
     border-radius: 3px;
-    color: #fff;
+    color:var(--main-letter);
     width: 15px;
     font-size: 14px;
 }
@@ -493,7 +515,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
     background-color: transparent;
     outline: none;
     padding: 8px 5px;
-    color: #fff;
+    color:var(--main-letter);
     border: none;
 }
 
@@ -571,7 +593,6 @@ aside ul li:hover, aside ul .aside-menu:hover{
     .l-header .user-name{
         font-size: 13px;
         text-wrap: nowrap;
-        border: 1px solid #1ea35e;
         width: 100px;
         text-overflow: ellipsis;
         overflow: hidden;

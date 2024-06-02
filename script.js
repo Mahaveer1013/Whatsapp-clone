@@ -45,7 +45,7 @@ users.forEach(user => {
         var profilePic = user.querySelector('.user-list-dp').src;
         chatHeader.querySelector('.user-name').innerText = username;
         chatHeader.querySelector('.user-header-dp').src = profilePic;
-        if (window.innerWidth < 768) {
+        if (window.innerWidth <= 768) {
             console.log('yes its none');
             chatPage.classList.add('active');
             deafultChatPage.classList.add('hide');
@@ -59,16 +59,35 @@ users.forEach(user => {
     })
 })
 
-if (window.innerWidth < 768) {
+if (window.innerWidth <= 768) {
     chatPage.classList.add('hide');
 }
 
 function goBack() {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth <= 768) {
         chatPage.classList.remove('active');
         chatList.classList.add('active');
     } else {
         deafultChatPage.classList.remove('hide');
         userChatPage.classList.add('hide');
     }
+}
+
+const searchBox = document.getElementById('for-chat-search');
+const namesList = document.querySelector('.user-lists');
+const names = namesList.querySelectorAll('li .user-dets h4');
+function searchUsers() {
+    const filter = searchBox.value.toLowerCase();
+    names.forEach(name => {
+        if (name.innerText.toLowerCase().indexOf(filter) !== -1) {
+            name.parentElement.parentElement.style.display = '';
+        } else {
+            name.parentElement.parentElement.style.display = 'none';
+        }
+    })
+}
+
+var body = document.querySelector('body');
+function changeTheme() {
+    body.classList.toggle('light');
 }

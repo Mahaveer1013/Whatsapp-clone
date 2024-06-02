@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <!-- Developed By Mahaveer.A on 31-05-2024 -->
 </head>
-<body>
+<body class="light">
 
     <!-- aside section -->
 
@@ -29,7 +29,7 @@
                 <i class="fab fa-facebook-messenger"></i>
                 <span>Chats</span>
             </li>
-            <li>
+            <li onclick="changeTheme()">
                 <i class="fas fa-phone"></i>
                 <span>Calls</span>
             </li>
@@ -77,7 +77,7 @@
             <div class="chat-search">
                 <label for="for-chat-search" class="chat-search-label">
                     <i class="fas fa-search"></i>
-                    <input type="search" id="for-chat-search" placeholder="Search or start a new chat">
+                    <input type="search" id="for-chat-search" placeholder="Search or start a new chat" onkeyup="searchUsers()">
                 </label>
             </div>
             <ul class="user-lists">
