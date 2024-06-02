@@ -18,6 +18,7 @@
     --default-chat-page: #adaaaa;
     --other-msg-bg: #363636;
     --my-msg-bg: #005c4b;
+
 }
 
 body.light{
@@ -235,7 +236,8 @@ aside ul li:hover, aside ul .aside-menu:hover{
     width: 5%;
     font-size: 13px;
     padding: 0 10px;
-    color: #dddddd8b;
+    color: var(--chat-search-input-color);
+
 }
 
 .chat-search input{
@@ -244,7 +246,6 @@ aside ul li:hover, aside ul .aside-menu:hover{
     border: none;
     color:var(--main-letter);
     background-color: transparent;
-
 }
 
 .chat-search label.focused {
@@ -253,7 +254,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .chat-search input::placeholder{
-    color: #dddddd8b;
+    color: var(--chat-search-input-color);
 }
 
 .user-lists{
