@@ -6,10 +6,13 @@
     <title>Whatsapp</title>
     <link rel="icon" href="https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
     <!-- Developed By Mahaveer.A on 31-05-2024 -->
 </head>
-<body>
+<body class="dark">
 
     <!-- Aside section -->
 
@@ -21,43 +24,60 @@
                 <div class="menu-bar"></div>
             </div>
             <div class="go-back-aside">
-                <span class="go-back" onclick="goBack()">
-                    <i class="fa-solid fa-arrow-left"></i>
+                <span class="material-symbols-outlined go-back" onclick="goBack()">
+                        arrow_back
                 </span>
             </div>
-            <li class="active" index="1">
-                <i class="fab fa-facebook-messenger"></i>
-                <span>Chats</span>
+            <li index="1" class="aside-btn">
+                <span class="material-symbols-outlined">
+                    chat
+                </span>
+                <p>Chats</p>
             </li>
-            <li index="2">
-                <i class="fas fa-phone"></i>
-                <span>Calls</span>
+            <li class="active aside-btn" index="2">
+                <span class="material-symbols-outlined">
+                    call
+                </span>
+                <p>Calls</p>
             </li>
-            <li index="3">
-                <i class="fa-solid fa-video"></i>
-                <span>Status</span>
+            <li index="3" class="aside-btn">
+                <span class="material-symbols-outlined">
+                    history
+                </span>
+                <p>Status</p>
             </li>
-            <li onclick="changeTheme()">
-                <i class="fa-solid fa-circle-half-stroke"></i>
-                <span>Change theme</span>
+            <li onclick="changeTheme()" class="change-theme">
+                <span class="material-symbols-outlined dark-mode" style="color: black">
+                    dark_mode
+                </span>
+                <span class="material-symbols-outlined light-mode mode" style="color: #fff;;">
+                    light_mode
+                </span>
+                <p>Change theme</p>
             </li>
             <div class="spacer"></div>
-            <li index="4">
-                <i class="fas fa-star"></i>
-                <span>Starred messages</span>
+            <li index="4" class="aside-btn">
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <p>Starred messages</p>
             </li>
-            <li index="5">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Archived chats</span>
+            <li index="5" class="aside-btn">
+                <span class="material-symbols-outlined">
+                    archive
+                </span>
+                <p>Archived chats</p>
             </li>
             <div class="line"></div>
-            <li index="6">
-                <i class="fa-solid fa-gear"></i>
-                <span>Settings</span>
+            <li index="6" class="aside-btn">
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+                <p>Settings</p>
             </li>
-            <li index="7">
+            <li index="7" class="aside-btn">
                 <img src="images/fake_dp.jpg" alt="Profile Pic"/>
-                <span>Profile</span>
+                <p>Profile</p>
             </li>
         </ul>
     </aside>
@@ -74,15 +94,21 @@
                     <p>Chats</p>
                 </div>
                 <div class="chat-header-icons">
-                    <i class="fas fa-pen-to-square"></i>
+                    <span class="material-symbols-outlined">
+                        edit_square
+                    </span>
                 </div>
                 <div class="chat-header-icons">
-                    <i class="fas fa-filter"></i>
+                    <span class="material-symbols-outlined">
+                        filter_list
+                    </span>
                 </div>
             </div>
             <div class="chat-search">
                 <label for="for-chat-search" class="chat-search-label">
-                    <i class="fas fa-search"></i>
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
                     <input type="search" id="for-chat-search" autocomplete="false" placeholder="Search or start a new chat" onkeyup="searchUsers()">
                 </label>
             </div>
@@ -255,17 +281,24 @@
         <!-- chat section -->
         <div class="chat-page">
             <div class="default-chat-page">
-                <p class="wp-icon"><i class="fa-brands fa-whatsapp"></i></p>
+                <p class="wp-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Outline Logo" width="100" height="100">
+                </p>
                 <h3>WhatsApp for Windows</h3>
                 <p>Send and receive messages without your keeping phone online.</p>
                 <p>Use WhatsApp on up to 4 linked deveices and 1 phone at the same time.</p>
-                <p class="end-to-encrypted"><i class="fa-solid fa-lock"></i> End-to-end encrypted</p>
+                <p class="end-to-encrypted">
+                    <span class="material-symbols-outlined">
+                        lock
+                    </span>
+                    End-to-end encrypted
+                </p>
             </div>
             <div class="user-chat-page hide">
                 <div class="user-chat-header">
                     <div class="l-header">
-                        <span class="go-back" onclick="goBack()">
-                            <i class="fa-solid fa-arrow-left"></i>
+                        <span class="material-symbols-outlined go-back" onclick="goBack()">
+                            arrow_back
                         </span>
                         <div class="user-dp">
                             <img class="user-header-dp" src="images/person1.jpg" alt="user">
@@ -275,9 +308,17 @@
                         </div>
                     </div>
                     <div class="r-header">
-                        <span><i class="fas fa-phone"></i></span>
-                        <span><i class="fas fa-video"></i></span>
-                        <span><i class="fas fa-search"></i></span>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                videocam
+                            </span>
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
                     </div>
                 </div>
                 <div class="user-chat">
@@ -394,21 +435,21 @@
                     
                 </div>
                 <div class="user-send">
-                    <span>
-                        <i class="fa-regular fa-face-smile"></i>
+                    <span class="material-symbols-outlined">
+                        sentiment_satisfied
                     </span>
-                    <span>
-                        <label for="doc-send">
-                            <i class="fa-solid fa-link"></i>
-                        </label>
+                    <label for="doc-send">
+                        <span class="material-symbols-outlined">
+                            attach_file
+                        </span>
+                    </label>
                         <input type="file" id="doc-send" class="doc-send" hidden>
-                    </span>
                     <input type="text" placeholder="Type a message" id="msg-input" class="msg-input">
-                    <span class="mic-btn">
-                        <i class="fa-solid fa-microphone-lines"></i>
+                    <span class="material-symbols-outlined mic-btn">
+                        mic
                     </span>
-                    <span class="send-btn" style="display: none;">
-                        <i class="fa-regular fa-paper-plane"></i>
+                    <span class="material-symbols-outlined send-btn" style="display: none;">
+                        send
                     </span>
                 </div>
             </div>
@@ -425,18 +466,224 @@
         <div class="call-list-div">
             <div class="call-list-header">
                 <h2>Calls</h2>
-                <span>
-                    <i class="fas fa-phone"></i>
+                <span class="material-symbols-outlined">
+                    add_call
                 </span>
             </div>
             <div class="call-list-search">
                 <label for="call-list-search">
-                    <i class="fas fa-search"></i>
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
                     <input type="search" id="call-list-search" placeholder="Search or start a new call">
                 </label>
             </div>
-            <div class="call-list">
-                
+            <ul class="user-lists">
+                <li>
+                    <div class="user-dp">
+                        <span class="material-symbols-outlined">
+                            link
+                        </span>
+                    </div>
+                    <div class="user-dets">
+                        <h4>Create call link</h4>
+                        <!-- <span class="last-msg-time">Today</span> -->
+                        <div class="last-msg create-link">
+                            <p>Share a link for your WhatsApp call</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person1.jpg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>John Doe</h4>
+                        <span class="last-msg-time">Today</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person2.jpg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>Jane Smith</h4>
+                        <span class="last-msg-time">2 hours ago</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person3.jpg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>Michael Brown</h4>
+                        <span class="last-msg-time">3 hours ago</span>
+                        <div class="call-symbol missed">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_received
+                            </span>
+                            <small>Missed</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person4.jpg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>Emily Davis</h4>
+                        <span class="last-msg-time">Yesterday</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person5.jpeg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>Chris Johnson</h4>
+                        <span class="last-msg-time">2 days ago</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person6.jpg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>Amanda Lee</h4>
+                        <span class="last-msg-time">3 days ago</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person7.jpeg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>David Wilson</h4>
+                        <span class="last-msg-time">4 days ago</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person8.jpg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>Sophia Martinez</h4>
+                        <span class="last-msg-time">5 days ago</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/person9.jpeg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>James Anderson</h4>
+                        <span class="last-msg-time">Last week</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-dp">
+                        <img class="user-list-dp" src="images/fake_dp.jpg" alt="user">
+                    </div>
+                    <div class="user-dets">
+                        <h4>Linda Garcia</h4>
+                        <span class="last-msg-time">Last month</span>
+                        <div class="call-symbol">
+                            <span class="material-symbols-outlined">
+                                call
+                            </span>
+                            <span class="material-symbols-outlined arrow-icon">
+                                call_made
+                            </span>
+                            <small>Outgoing</small>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="call-info-div">
+            <div class="default-call-info">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Outline Logo" width="100" height="100">
+                <p class="end-to-encrypted">
+                    <span class="material-symbols-outlined">
+                        lock
+                    </span>
+                    Your personal calls are end-to-end encrypted
+                </p>
             </div>
         </div>
     </section>

@@ -12,7 +12,7 @@ menuBar.addEventListener('click', () => {
 })
 
 var sections = document.querySelectorAll('section');
-var aside_lists = document.querySelectorAll('aside ul li');
+var aside_lists = document.querySelectorAll('aside ul .aside-btn');
 aside_lists.forEach(li => {
     li.addEventListener('click', () => {
         aside_lists.forEach(list => {
@@ -23,7 +23,6 @@ aside_lists.forEach(li => {
         sections.forEach(section => {
             var section_index = section.getAttribute('index');
             var li_index = li.getAttribute('index');
-            console.log(section_index,li_index);
             section.style.display = 'none';
             if (section_index === li_index) {
                 section.style.display = 'flex';
@@ -42,13 +41,13 @@ chatSearchInput.addEventListener('blur', () => {
     chatSearchLabel.classList.remove('focused');
 })
 
-var chatSearchLabel = document.querySelector('.call-list-search label');
-var chatSearchInput = document.getElementById('call-list-search');
-chatSearchInput.addEventListener('focus', () => {
-    chatSearchLabel.classList.add('focused');
+var callSearchLabel = document.querySelector('.call-list-search label');
+var callSearchInput = document.getElementById('call-list-search');
+callSearchInput.addEventListener('focus', () => {
+    callSearchLabel.classList.add('focused');
 })
-chatSearchInput.addEventListener('blur', () => {
-    chatSearchLabel.classList.remove('focused');
+callSearchInput.addEventListener('blur', () => {
+    callSearchLabel.classList.remove('focused');
 })
 
 var users = document.querySelectorAll('.user-lists li');
@@ -110,4 +109,7 @@ function searchUsers() {
 var body = document.querySelector('body');
 function changeTheme() {
     body.classList.toggle('light');
+    body.classList.toggle('dark');
+    document.querySelector('.dark-mode').classList.toggle('mode');
+    document.querySelector('.light-mode').classList.toggle('mode');
 }

@@ -39,11 +39,17 @@ body{
     width: 100vw;
     flex-direction: row;
     flex-grow: 1;
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar{
     width: 6px;
     height: 50px;
+}
+
+.material-symbols-outlined{
+    cursor: pointer;
+    font-size: 20px !important;
 }
 
 /* aside section */
@@ -66,7 +72,7 @@ aside.close{
     width: 40px;
 }
 
-aside.close ul li span{
+aside.close ul li p{
     display: none;
 }
 
@@ -91,7 +97,7 @@ aside ul li, .aside-menu{
     position: relative;
 }
 
-aside ul li span{
+aside ul li p{
     text-wrap: nowrap;
     color: var(--light-letter);
 }
@@ -135,9 +141,9 @@ aside ul .active::before{
     background-color: #1ea35e;
 }
 
-aside ul li i{
+aside ul li span{
     margin-right: 15px;
-    font-size: 18px;
+    font-size: 20px !important;
 }
 
 aside ul .line{
@@ -145,7 +151,6 @@ aside ul .line{
     border-top: 0.1px solid #dddddd3a;
     margin: auto;
     margin-bottom: 3px;
-
 }
 
 aside ul li img{
@@ -156,6 +161,14 @@ aside ul li img{
 
 aside ul li:hover, aside ul .aside-menu:hover{
     background-color: var(--hover);
+}
+
+.change-theme span{
+    display: none;
+}
+
+.change-theme span.mode{
+    display: block;
 }
 
 /* chat-section */
@@ -233,16 +246,17 @@ aside ul li:hover, aside ul .aside-menu:hover{
     background-color: var(--chat-search-input);
 }
 
-.chat-search label i{
+.chat-search label span{
     width: 5%;
     font-size: 13px;
-    padding: 0 10px;
+    margin-left: 10px;
     color: var(--chat-search-input-color);
 }
 
 .chat-search input{
     outline: none;
-    width: 80%;
+    width: calc(95% - 20px);
+    margin-left: 10px;
     border: none;
     color:var(--main-letter);
     background-color: transparent;
@@ -250,6 +264,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 
 .chat-search label.focused {
     background-color: var(--aside-color);
+    border: none;
     border-bottom: 2px solid #005c4b;
 }
 
@@ -261,11 +276,21 @@ aside ul li:hover, aside ul .aside-menu:hover{
     margin: 10px;
     overflow-y: auto;
     flex-grow: 1;
+    animation: user-list .3s;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     gap: 5px;
     height: calc(100% - 140px);
+}
+
+@keyframes user-list {
+    from{
+        padding-top: 10px;
+    }
+    to{
+        padding-top: 0px;
+    }
 }
 
 .user-lists li{
@@ -313,7 +338,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
     text-overflow: ellipsis;
 }
 
-.user-dets span{
+.user-dets .last-msg-time{
     position: absolute;
     right: 0;
     font-size: 12px;
@@ -361,6 +386,13 @@ aside ul li:hover, aside ul .aside-menu:hover{
 .end-to-encrypted{
     position: absolute;
     bottom: 100px;
+    color: var(--default-chat-page);
+    display: flex;
+    align-items: center;
+}
+
+.end-to-encrypted span{
+    margin-right: 10px;
 }
 
 /* user-chat */
@@ -393,7 +425,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .r-header span, .go-back{
-    padding: 13px;
+    padding: 11px;
     border-radius: 6px;
 }
 
@@ -408,6 +440,15 @@ aside ul li:hover, aside ul .aside-menu:hover{
 .r-header{
     display: flex;
     gap: 2px;
+}
+
+.r-header div{
+    background-color: var(--chat-user-hover);
+    border-radius: 8px;
+}
+
+.r-header div span:first-child{
+    border-right: 1px solid #2a2929;
 }
 
 .user-chat{
@@ -526,7 +567,10 @@ body.light .user-chat{
 
 .go-back-aside{
     display: none;
-    margin-left: 5px;
+}
+
+.mic-btn, .send-btn{
+    margin-right: 10px;
 }
 
 /* call-section */
@@ -555,19 +599,11 @@ body.light .user-chat{
     position: relative;
 }
 
-.call-list-header span::after{
-    content:'+';
-    position: absolute;
-    top: 2px;
-    right: 8px;
-}
-
 .call-list-header span:hover{
     background-color: var(--chat-user-hover);
 }
 
 .call-list-search{
-    margin-top: 10px;
     width: 100%;
     display: flex;
     height: 50px;
@@ -589,7 +625,7 @@ body.light .user-chat{
     background-color: var(--chat-search-input);
 }
 
-.call-list-search label i{
+.call-list-search label span{
     width: 5%;
     font-size: 13px;
     padding: 0 10px;
@@ -606,12 +642,51 @@ body.light .user-chat{
 
 .call-list-search label.focused {
     background-color: var(--aside-color);
+    border: none;
     border-bottom: 2px solid #005c4b;
 }
 
 .call-list-search input::placeholder{
     color: var(--chat-search-input-color);
 }
+
+.call-symbol.missed {
+    color: rgb(238, 108, 108);
+}
+
+.create-link{
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.call-symbol{
+    position: relative;
+}
+
+.call-symbol span{
+    font-size: 12px !important;
+}
+
+.call-symbol .arrow-icon{
+    position: absolute;
+    left: 6px;
+    top: 1px;
+    font-size: 8px !important;
+}
+
+.call-info-div{
+    flex-grow: 1;
+}
+
+.default-call-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+
 
 
 @media all and (max-width:768px) {
@@ -685,7 +760,7 @@ body.light .user-chat{
     }
 
     .chat-section{
-        width: calc(100% - 38px);
+        width: calc(100% - 49px);
     }
 
     .aside{
