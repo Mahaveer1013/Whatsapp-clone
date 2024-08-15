@@ -86,7 +86,7 @@
 
     <!-- Chat section -->
 
-    <section class="container chat-section" index="1" style="display: none;">
+    <section class="container chat-section" index="1">
         <!-- chat list section -->
         <div class="chat-list active">
             <div class="chat-header">
@@ -119,7 +119,10 @@
                     </div>
                     <div class="user-dets">
                         <h4>John Doe</h4>
-                        <span class="last-msg-time">Today</span>
+                        <div class="last-msg-time new-msg">
+                            Today
+                            <span>2</span>
+                        </div>
                         <div class="last-msg">
                             <div class="double-tick">
                                 <div class="tick-box"></div>
@@ -462,8 +465,8 @@
 
     <!-- Call section -->
 
-    <section class="container call-section" index="2">
-        <div class="call-list-div">
+    <section class="container call-section" index="2" style="display: none;">
+        <div class="call-list-div active">
             <div class="call-list-header">
                 <h2>Calls</h2>
                 <span class="material-symbols-outlined">

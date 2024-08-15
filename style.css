@@ -185,7 +185,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .chat-section .chat-list{
-    width: clamp(250px , 300px, 330px);
+    width: clamp(250px , 400px, 450px);
     color:var(--main-letter);
     border-right: 1px solid black;
     height: 100vh;
@@ -331,7 +331,7 @@ aside ul li:hover, aside ul .aside-menu:hover{
 }
 
 .user-dets h4, .user-dets p{
-    width: 100%;
+    width: calc(100% - 20px);
     text-wrap: nowrap;
     white-space: nowrap;
     overflow: hidden;
@@ -347,6 +347,27 @@ aside ul li:hover, aside ul .aside-menu:hover{
 
 .last-msg-time, .last-msg{
     color: var(--light-letter);
+}
+
+.last-msg-time.new-msg{
+    color: #1daa61;
+}
+
+.last-msg-time span{
+    color: var(--background);
+    background-color: #1daa61;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 3px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 3px;
+
 }
 
 /* Chat Page */
@@ -580,7 +601,7 @@ body.light .user-chat{
 }
 
 .call-list-div{
-    width: 450px;
+    width: clamp(250px , 400px, 450px);
     border-right: 1px solid black;
     height: 100vh;
 }
@@ -775,5 +796,23 @@ body.light .user-chat{
         gap: 0;
     }
 
-    .user-send span:fi
+    /* call-section */
+
+    .call-info-div{
+        display: none;
+    }
+
+    .call-info-div.active{
+        display: flex;
+    }
+
+    .call-info-div{
+        display: none;
+    }
+
+    .call-list-div.active{
+        display: block;
+        width: calc(100% - 1px);
+    }
+    
 }
